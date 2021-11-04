@@ -1,4 +1,5 @@
 using Exiled.API.Features;
+using Exiled.API.Features.Items;
 using Hints;
 using Newtonsoft.Json;
 using System;
