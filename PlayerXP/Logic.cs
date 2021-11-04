@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using CommandSystem;
-using Exiled.API.Features.Items;
 using Exiled.Events.EventArgs;
 
 namespace PlayerXP
