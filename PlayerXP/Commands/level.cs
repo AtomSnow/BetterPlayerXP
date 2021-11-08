@@ -11,7 +11,7 @@ namespace PlayerXP
     using System.IO;
 
     [CommandHandler(typeof(ClientCommandHandler))]
-    public class top : ICommand
+    public class level : ICommand
     {
         public string Command { get; } = "level";
 
