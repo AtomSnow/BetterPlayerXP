@@ -28,7 +28,7 @@ namespace PlayerXP
 				if (num > 15)
 				{
 					ev.Color = "red";
-					ev.ReturnMessage = "Leaderboards can be no larger than 15.";
+					ev.ReturnMessage = "Leaderboard can be no larger than 15.";
 					return;
 				}
 				if (pInfoDict.Count != 0)
