@@ -4,9 +4,6 @@ namespace PlayerXP
     using System.Linq;
     using CommandSystem;
     using Exiled.API.Features;
-    using Exiled.API.Features.Items;
-    using RemoteAdmin;
-    using Exiled.Events.EventArgs;
     using System.Collections.Generic;
     using System.IO;
     using Exiled.Permissions.Extensions;
@@ -47,3 +44,5 @@ namespace PlayerXP
     }
 }
 }
+
+//This will be rewritten soon.

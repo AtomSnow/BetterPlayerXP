@@ -1,11 +1,7 @@
 namespace PlayerXP
 {
     using System;
-    using System.Linq;
     using CommandSystem;
-    using Exiled.API.Features;
-    using Exiled.API.Features.Items;
-    using RemoteAdmin;
     using Exiled.Permissions.Extensions;
 
     [CommandHandler(typeof(RemoteAdminCommandHandler))]
@@ -34,3 +30,5 @@ namespace PlayerXP
     }
 }
 }
+
+//This will be rewritten soon.

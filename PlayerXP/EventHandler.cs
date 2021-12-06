@@ -1,13 +1,7 @@
 using Exiled.API.Features;
-using Exiled.API.Features.Items;
-using Hints;
-using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using CommandSystem;
-using RemoteAdmin;
 using Exiled.Events.EventArgs;
 
 namespace PlayerXP

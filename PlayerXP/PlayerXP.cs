@@ -2,7 +2,6 @@ using System;
 using System.IO;
 using Exiled.API.Features;
 using PlayerXP.API;
-using CommandSystem;
 
 namespace PlayerXP
 {
@@ -12,11 +11,11 @@ namespace PlayerXP
 		private EventHandler ev;
 		public static string XPPath = Path.Combine(Path.Combine(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "EXILED"), "Plugins"), "PlayerXP");
 
-		public override string Name => "PlayerXp";
+		public override string Name => "BetterPlayerXP";
 		public override string Author { get; } = "Cyanox, AtomSnow, DentyTxR (Partial update)";
-        	public override Version RequiredExiledVersion { get; } = new Version(3, 0, 5);
+        	public override Version RequiredExiledVersion { get; } = new Version(4, 0, 0);
         	public override string Prefix { get; } = "pxp";
-        	public override Version Version { get; } = new Version(0, 2, 0);
+        	public override Version Version { get; } = new Version(0, 3, 0);
 
 		public override void OnEnabled()
 		{
