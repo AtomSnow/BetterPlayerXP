@@ -35,7 +35,7 @@ namespace PlayerXP
         {
         if (!sender.CheckPermission("bpxp.xpsave"))
         {
-            response = "You can't reload gameplay configs, you don't have \"bpxp.xpsave\" permission.";
+            response = "You can't use this command, you don't have \"bpxp.xptoggle\" permission.";
             return false;
         }
         

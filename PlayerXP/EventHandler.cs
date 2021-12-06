@@ -76,7 +76,7 @@ namespace PlayerXP
 			if (ev.Killer.Team == ev.Target.Team && ev.Killer.UserId != ev.Target.UserId && PlayerXP.instance.Config.TeamKillPunishment > 0)
 			{
 				int xp = CalcXP(ev.Killer, PlayerXP.instance.Config.TeamKillPunishment);
-				RemoveXP(ev.Killer.UserId, xp, PlayerXP.instance.Config.PlayerTeamkillMessage.Replace("{xp}", xp.ToString()).Replace("{target}", ev.Target.Nickname));
+				if (PlayerXP.instance.Config.IsRoleplay) RemoveXP(ev.Killer.UserId, xp, PlayerXP.instance.Config.PlayerTeamkillMessage.Replace("{xp}", xp.ToString()).Replace("{target}", ev.Target.Nickname));
 				// Player teamkilled
 			}
 

@@ -16,6 +16,10 @@ namespace PlayerXP
 		[Description("Threat Tutorials as SCPs (Serpent's Hand Compatibilty).")]
 		public bool IsSH { get; set; } = false;
 
+		[Description("For Roleplay servers.")]
+		public bool IsRoleplay { get; set; } = false;
+
+
 		[Description("The amount of XP all players start with.")]
 		public int XpInitial { get; set; } = 100;
 

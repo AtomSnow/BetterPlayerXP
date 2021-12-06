@@ -21,8 +21,7 @@ namespace PlayerXP
 		public override void OnEnabled()
 		{
 			base.OnEnabled();
-			Log.Info("[BetterPlayerXP] - THIS RELEASE HAS ISSUES SUCH AS COMMANDS NOT WORKING, IF ANY BUG APPEARS PLEASE MAKE BUG REPORT ON GITHUB.");
-			Log.Info("[BetterPlayerXP] - This version was made/compiled for EXILED 3.0.5, while there is newer, this plugin might not work.");
+			Log.Info("This release was not tested, though ill put this plugin on my friend's server for testing.");
 
 			if (!Config.IsEnabled) return;
 
