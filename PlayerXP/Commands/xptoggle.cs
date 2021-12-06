@@ -6,7 +6,7 @@ namespace PlayerXP
     using Exiled.API.Features;
     using Exiled.API.Features.Items;
     using RemoteAdmin;
-//    using Exiled.Permissions.Extensions;
+    using Exiled.Permissions.Extensions;
 
     [CommandHandler(typeof(RemoteAdminCommandHandler))]
     public class xptoggle : ICommand
@@ -19,12 +19,12 @@ namespace PlayerXP
 
         public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
         
-    //    {
-    //    if (!sender.CheckPermission("bpxp.xptoggle"))
-    //    {
-    //        response = "You can't use this command, you don't have \"bpxp.xptoggle\" permission.";
-    //        return false;
-    //    }
+        {
+        if (!sender.CheckPermission("bpxp.xptoggle"))
+        {
+            response = "You can't use this command, you don't have \"bpxp.xptoggle\" permission.";
+            return false;
+        }
 
         {
 				ev.IsAllowed = false;

@@ -52,8 +52,7 @@ namespace PlayerXP
 				{
 					ev.Color = "red";
 					ev.ReturnMessage = "Error: there is not enough data to display the leaderboard.";
-				}
 			}
 		}
-    }
+	}
 }

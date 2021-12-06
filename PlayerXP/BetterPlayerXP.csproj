@@ -58,6 +58,9 @@
     <Reference Include="Mirror">
       <HintPath>dep\Mirror.dll</HintPath>
     </Reference>
+    <Reference Include="Exiled.Permissions">
+      <HintPath>dep\Exiled.Permissions.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>dep\Newtonsoft.Json.dll</HintPath>
@@ -91,6 +94,10 @@
     <Compile Include="PlayerInfo.cs" />
     <Compile Include="PlayerXP.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Commands\level.cs" />
+    <Compile Include="Commands\top.cs" />
+    <Compile Include="Commands\xpsave.cs" />
+    <Compile Include="Commands\xptoggle.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

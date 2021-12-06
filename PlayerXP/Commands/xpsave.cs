@@ -9,7 +9,7 @@ namespace PlayerXP
     using Exiled.Events.EventArgs;
     using System.Collections.Generic;
     using System.IO;
-//    using Exiled.Permissions.Extensions;
+    using Exiled.Permissions.Extensions;
 
     [CommandHandler(typeof(RemoteAdminCommandHandler))]
     public class xpsave : ICommand
@@ -33,11 +33,11 @@ namespace PlayerXP
         public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
         
         {
-    //    if (!sender.CheckPermission("bpxp.xpsave"))
-    //    {
-    //        response = "You can't reload gameplay configs, you don't have \"bpxp.xpsave\" permission.";
-    //        return false;
-    //    }
+        if (!sender.CheckPermission("bpxp.xpsave"))
+        {
+            response = "You can't reload gameplay configs, you don't have \"bpxp.xpsave\" permission.";
+            return false;
+        }
         
         {
 				ev.IsAllowed = false;
