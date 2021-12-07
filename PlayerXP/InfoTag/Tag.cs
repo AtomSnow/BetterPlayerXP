@@ -11,9 +11,11 @@ namespace PlayerXP.Tag
     {
         public void OnPlayerChangeRole(ChangingRoleEventArgs ev)
         {
-            TargetLevel = PlayerXP.GetLevel;
+            if (PlayerXP.instance.Config.DisplayLevel == true)
+            {
             ev.Player.CustomInfo = string.Empty;
             ev.Player.CustomInfo = ($"Level: 1");
+            }
         }
     }
 }

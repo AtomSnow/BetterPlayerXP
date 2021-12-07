@@ -70,7 +70,7 @@ namespace PlayerXP
 			if (ev.Killer.Team == ev.Target.Team && ev.Killer.UserId != ev.Target.UserId && PlayerXP.instance.Config.TeamKillPunishment > 0)
 			{
 				int xp = CalcXP(ev.Killer, PlayerXP.instance.Config.TeamKillPunishment);
-				if (PlayerXP.instance.Config.IsRoleplay = false) RemoveXP(ev.Killer.UserId, xp, PlayerXP.instance.Config.PlayerTeamkillMessage.Replace("{xp}", xp.ToString()).Replace("{target}", ev.Target.Nickname));
+				if (PlayerXP.instance.Config.IsRoleplay == false) RemoveXP(ev.Killer.UserId, xp, PlayerXP.instance.Config.PlayerTeamkillMessage.Replace("{xp}", xp.ToString()).Replace("{target}", ev.Target.Nickname));
 				// Player teamkilled
 			}
 
@@ -180,7 +180,7 @@ namespace PlayerXP
 						if (player.Role == RoleType.Tutorial)
 						{
 							int xp = CalcXP(player, PlayerXP.instance.Config.TutorialScpKillsPlayer);
-							if (PlayerXP.instance.Config.IsSH = true) AddXP(player.UserId, xp, PlayerXP.instance.Config.TutorialScpKillsPlayerMessage.Replace("{xp}", xp.ToString()).Replace("{target}", ev.Target.Nickname));
+							if (PlayerXP.instance.Config.IsSH == true) AddXP(player.UserId, xp, PlayerXP.instance.Config.TutorialScpKillsPlayerMessage.Replace("{xp}", xp.ToString()).Replace("{target}", ev.Target.Nickname));
 						}
 					}
 				}
