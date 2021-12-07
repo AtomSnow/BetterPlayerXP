@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using Exiled.Events.EventArgs;
 using PlayerXP;
+using MEC;
 
 namespace PlayerXP.Tag
 {    
@@ -13,8 +14,11 @@ namespace PlayerXP.Tag
         {
             if (PlayerXP.instance.Config.DisplayLevel == true)
             {
-            ev.Player.CustomInfo = string.Empty;
+            ev.Player.RankName = string.Empty;
+            Timing.CallDelayed(delay: 0, () => 
+            {
             ev.Player.CustomInfo = ($"Level: 1");
+            });
             }
         }
     }
