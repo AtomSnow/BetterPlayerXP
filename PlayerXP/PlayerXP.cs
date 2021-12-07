@@ -15,7 +15,7 @@ namespace PlayerXP
 		public override string Author { get; } = "Cyanox, AtomSnow, DentyTxR (Partial update)";
         	public override Version RequiredExiledVersion { get; } = new Version(4, 1, 2);
         	public override string Prefix { get; } = "pxp";
-        	public override Version Version { get; } = new Version(0, 3, 1);
+        	public override Version Version { get; } = new Version(0, 3, 2);
 
 		public override void OnEnabled()
 		{
