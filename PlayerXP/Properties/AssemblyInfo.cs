@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("PlayerXP")]
+[assembly: AssemblyTitle("BetterPlayerXP")]
 [assembly: AssemblyDescription("Adds leveling system to your favourite game called SCP:SL")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("AtomSnow")]
-[assembly: AssemblyProduct("PlayerXP")]
+[assembly: AssemblyProduct("BetterPlayerXP")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

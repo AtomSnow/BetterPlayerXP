@@ -58,7 +58,7 @@
     <Reference Include="Mirror">
       <HintPath>dep\Mirror.dll</HintPath>
     </Reference>
-    <Reference Include="Exiled.Permissions">
+    <Reference Include="Exiled.Permissions, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>dep\Exiled.Permissions.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -92,6 +92,7 @@
     <Compile Include="EventHandler.cs" />
     <Compile Include="Logic.cs" />
     <Compile Include="PlayerInfo.cs" />
+    <Compile Include="Infotag/Tag.cs" />
     <Compile Include="PlayerXP.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

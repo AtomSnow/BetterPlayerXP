@@ -18,7 +18,7 @@ namespace PlayerXP
 			player.HintDisplay.Show(new TextHint(msg, new HintParameter[] { new StringHintParameter("") }, HintEffectPresets.FadeInAndOut(0.25f, 1f, 0f), time));
 		}
 
-		internal void AddXP(string userid, int xp, string msg = null, float karmaOverride = -1f)
+		public void AddXP(string userid, int xp, string msg = null, float karmaOverride = -1f)
 		{
 			if (pInfoDict.ContainsKey(userid))
 			{
@@ -39,7 +39,7 @@ namespace PlayerXP
 			if (PlayerXP.instance.Config.IsDebug) Log.Info($"Giving {xp}xp to {Player.Get(userid).Nickname} ({userid}).");
 		}
 
-		internal void RemoveXP(string userid, int xp, string msg = null)
+		public void RemoveXP(string userid, int xp, string msg = null)
 		{
 			if (pInfoDict.ContainsKey(userid))
 			{
@@ -65,7 +65,7 @@ namespace PlayerXP
 			if (PlayerXP.instance.Config.IsDebug) Log.Info($"Removing {xp}xp from {Player.Get(userid).Nickname} ({userid}).");
 		}
 
-		internal void AdjustKarma(Player player, float amount, bool canOverflow = false)
+		public void AdjustKarma(Player player, float amount, bool canOverflow = false)
 		{
 			if (PlayerXP.instance.Config.KarmaEnabled && pInfoDict.ContainsKey(player.UserId))
 			{
@@ -98,7 +98,7 @@ namespace PlayerXP
 				}
 			}
 	        }
-		internal int GetLevel(string userid)
+		public int GetLevel(string userid)
 		{
 			if (pInfoDict.ContainsKey(userid))
 			{
@@ -107,7 +107,7 @@ namespace PlayerXP
 			else return -1;
 		}
 
-		internal int GetXP(string userid)
+		public int GetXP(string userid)
 		{
 			if (pInfoDict.ContainsKey(userid))
 			{

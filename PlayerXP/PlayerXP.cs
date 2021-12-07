@@ -13,14 +13,14 @@ namespace PlayerXP
 
 		public override string Name => "BetterPlayerXP";
 		public override string Author { get; } = "Cyanox, AtomSnow, DentyTxR (Partial update)";
-        	public override Version RequiredExiledVersion { get; } = new Version(4, 0, 0);
+        	public override Version RequiredExiledVersion { get; } = new Version(4, 1, 2);
         	public override string Prefix { get; } = "pxp";
-        	public override Version Version { get; } = new Version(0, 3, 0);
+        	public override Version Version { get; } = new Version(0, 3, 1);
 
 		public override void OnEnabled()
 		{
 			base.OnEnabled();
-			Log.Info("This release was not tested, though ill put this plugin on my friend's server for testing.");
+			Log.Info("This plugin is still not fully working yet, if you want to help me, make pull request on my Github.");
 
 			if (!Config.IsEnabled) return;
 
