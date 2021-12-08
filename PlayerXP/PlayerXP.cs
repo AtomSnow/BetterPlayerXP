@@ -8,7 +8,7 @@ namespace PlayerXP
 	public class PlayerXP : Plugin<Config>
 	{
 		public static PlayerXP instance;
-		private EventHandler ev;
+		private EventHandler ev { get; set; }
 		public static string XPPath = Path.Combine(Path.Combine(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "EXILED"), "Plugins"), "PlayerXP");
 
 		public override string Name => "BetterPlayerXP";
