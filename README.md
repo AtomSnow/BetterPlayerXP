@@ -12,7 +12,7 @@ This fork is meant to update the plugin to latest EXILED 2 and 3 in the future, 
 
 # Installation
 
-**[EXILED](https://github.com/galaxy119/EXILED) must be installed, 3.3.X, 2.14.X for 0.1.0, older for really old 2.0.X, or even 1.5.X or SMod**
+**[EXILED](https://github.com/galaxy119/EXILED) 4.1.2 must be installed**
 
 Place the `BetterPlayerXP.dll` file in your `~/.config/Exiled/Plugins` folder.
 
