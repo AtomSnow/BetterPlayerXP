@@ -12,7 +12,7 @@ There are a few issues with the plugin but it is still usable, One issue is with
 
 # Fork info
 
-This fork is meant to update the plugin to latest EXILED 2 and 3 in the future, and add much more features.
+This fork is meant to maintain the plugin by the community.
 
 # Installation
 
