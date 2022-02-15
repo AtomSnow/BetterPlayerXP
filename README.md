@@ -10,6 +10,9 @@ I have no time or motivation to maintain this plugin, too many problems exist in
 
 There are a few issues with the plugin but it is still usable, One issue is with commands not working! If you want to fix it please go ahead and do so. -Denty (I just rebuilt this since Atom was having an issue with their compiler)
 
+# I know this code hurts
+Previous owner's fault
+
 # Fork info
 
 This fork is meant to maintain the plugin by the community.
