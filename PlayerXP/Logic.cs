@@ -35,7 +35,7 @@ namespace PlayerXP
 				
 				info.XP += (int)(xp * PlayerXP.instance.Config.XpScale * (PlayerXP.instance.Config.KarmaEnabled ? info.Karma : PlayerXP.instance.Config.KarmaInitial)); // Adjusts the player's karma.
 				
-				if (msg != null) SendHint(player, $"<color={PlayerXP.instance.Config.RemoveXPHintColor}>{msg}</color>"); // If the message is not null, then it will send it to the player.
+				if (msg != null) SendHint(player, $"<color={PlayerXP.instance.Config.AddXPHintColor}>{msg}</color>"); // If the message is not null, then it will send it to the player.
 
 				int calc = (info.Level - 1) * PlayerXP.instance.Config.XpIncrement + baseXP; // Calculates if the player can level up.
 				
