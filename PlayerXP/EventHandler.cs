@@ -188,7 +188,7 @@ namespace PlayerXP
 						if (player.Role == RoleType.Tutorial)
 						{
 							int xp = CalcXP(player, PlayerXP.instance.Config.TutorialScpKillsPlayer);
-							if (PlayerXP.instance.Config.IsSH) AddXP(player.UserId, xp, PlayerXP.instance.Config.TutorialScpKillsPlayerMessage.Replace("{xp}", xp.ToString()).Replace("{target}", ev.Target.Nickname));
+							if (PlayerXP.instance.Config.IsTutorialAnSCP) AddXP(player.UserId, xp, PlayerXP.instance.Config.TutorialScpKillsPlayerMessage.Replace("{xp}", xp.ToString()).Replace("{target}", ev.Target.Nickname));
 						}
 					}
 				}
@@ -200,7 +200,7 @@ namespace PlayerXP
 						if (player.Role == RoleType.Scp079)
 						{
 							int xp = CalcXP(player, PlayerXP.instance.Config.Scp079AssistedKill);
-							if (PlayerXP.instance.Config.IsSH) AddXP(player.UserId, xp, PlayerXP.instance.Config.Scp079AssistedKillMessage.Replace("{xp}", xp.ToString()).Replace("{target}", ev.Target.Nickname));
+							if (PlayerXP.instance.Config.IsTutorialAnSCP) AddXP(player.UserId, xp, PlayerXP.instance.Config.Scp079AssistedKillMessage.Replace("{xp}", xp.ToString()).Replace("{target}", ev.Target.Nickname));
 						}
 					}
 				}

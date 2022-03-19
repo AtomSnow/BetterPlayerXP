@@ -13,8 +13,8 @@ namespace PlayerXP
 		[Description("Whether or not debug information should be output to the console.")]
 		public bool IsDebug { get; set; } = false;
 
-		[Description("Threat Tutorials as SCPs (Serpent's Hand Compatibilty).")]
-		public bool IsSH { get; set; } = false;
+		[Description("Threat Tutorials as SCPs.")]
+		public bool IsTutorialAnSCP { get; set; } = false;
 
 		[Description("The amount of level all players start with.")]
 		public int LevelInitial { get; set; } = 1;
