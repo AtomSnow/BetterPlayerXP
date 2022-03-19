@@ -85,7 +85,6 @@ namespace PlayerXP
 			if (ev.Killer.Team == Team.CDP)
 			{
 				int gainedXP = 0;
-				bool isUnarmed = false;
 				if (ev.Target.Team == Team.RSC)
 				{
 					gainedXP = PlayerXP.instance.Config.DclassScientistKill;
@@ -98,7 +97,8 @@ namespace PlayerXP
 				if (gainedXP > 0 && ev.Target.UserId != ev.Killer.UserId)
 				{
 					int xp = CalcXP(ev.Killer, gainedXP);
-					AddXP(ev.Killer.UserId, xp, PlayerXP.instance.Config.PlayerKillMessage.Replace("{xp}", xp.ToString()).Replace("{target}", ev.Target.Nickname), isUnarmed ? -PlayerXP.instance.Config.KarmaLostOnDefenselessKill : -1f);
+					AddXP(ev.Killer.UserId, xp, PlayerXP.instance.Config.PlayerKillMessage.Replace("{xp}", xp.ToString()).Replace("{target}", ev.Target.Nickname));
+					// , isUnarmed ? -PlayerXP.instance.Config.KarmaLostOnDefenselessKill : -1f)
 				}
 			}
 			else if (ev.Killer.Team == Team.RSC)
