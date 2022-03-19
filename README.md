@@ -2,8 +2,8 @@
 
 A plugin that adds a leveling system to your server. Users start at level 1, and gain experience through doing tasks such as escaping as a classd or scientist, winning the round, killing an SCP, etc.
 
-# IMPORTANT!!!!11!!!!!!!!1!!1!!!!!!!!!!!!11
-EVERYTHING IS NOT WORKING YET!!!!!!!!!!!!!
+# IMPORTANT!!!!11!!!!!
+EVERYTHING IS NOT WORKING YET!
 
 # Installation
 
