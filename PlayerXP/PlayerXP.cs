@@ -8,26 +8,37 @@ namespace PlayerXP
 	public class PlayerXP : Plugin<Config>
 	{
 		public static PlayerXP instance;
+
 		private EventHandler ev { get; set; }
-		public static string XPPath = Path.Combine(Path.Combine(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "EXILED"), "Plugins"), "PlayerXP");
+
+		public static string XPPath = Path.Combine(Path.Combine(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "EXILED"), "Plugins"), "BetterPlayerXP");
+		public static string XPPathOld = Path.Combine(Path.Combine(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "EXILED"), "Plugins"), "PlayerXP");
 
 		public override string Name => "BetterPlayerXP";
+
 		public override string Author { get; } = "Cyanox, AtomSnow, DentyTxR (Partial update)";
-        	public override Version RequiredExiledVersion { get; } = new Version(4, 1, 2);
-        	public override string Prefix { get; } = "pxp";
-        	public override Version Version { get; } = new Version(0, 3, 2);
+
+        public override Version RequiredExiledVersion { get; } = new Version(4, 0, 0);
+
+        public override string Prefix { get; } = "BetterPlayerXP";
+
+        public override Version Version { get; } = new Version(0, 4, 0);
 
 		public override void OnEnabled()
 		{
 			base.OnEnabled();
-			Log.Info("This plugin is still not fully working yet, if you want to help me, make pull request on my Github.");
+			Log.Info("[PR1] This plugin is still not fully working yet, if you want to help me, make pull request on my Github!");
+
+			if (!Directory.Exists(XPPathOld)) Log.Info("XP Folder name has been changed to BetterPlayerXP, please migrate to new folder.");
 
 			if (!Config.IsEnabled) return;
 
 			if (!Directory.Exists(XPPath)) Directory.CreateDirectory(XPPath);
 
 			instance = this;
+
 			ev = new EventHandler();
+
 			PXP.singleton = ev;
 
 			Exiled.Events.Handlers.Server.WaitingForPlayers += ev.OnWaitingForPlayers;
@@ -58,7 +69,6 @@ namespace PlayerXP
 			Exiled.Events.Handlers.Player.Escaping -= ev.OnCheckEscape;
 			Exiled.Events.Handlers.Player.Handcuffing -= ev.OnHandcuff;
 			Exiled.Events.Handlers.Player.RemovingHandcuffs -= ev.OnRemovingHandcuff;
-
 			ev = null;
 		}
 

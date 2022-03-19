@@ -19,9 +19,8 @@ namespace PlayerXP
 		[Description("For Roleplay servers.")]
 		public bool IsRoleplay { get; set; } = false;
 
-		[Description("Display Level tags (WORK IN PROGRESS, TINYBRAINING)")]
-		public bool DisplayLevel { get; set; } = false;
-
+		[Description("The amount of level all players start with.")]
+		public int LevelInitial { get; set; } = 1;
 
 		[Description("The amount of XP all players start with.")]
 		public int XpInitial { get; set; } = 100;

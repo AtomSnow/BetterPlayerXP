@@ -2,17 +2,17 @@
 {
 	public class PlayerInfo
 	{
-		public string name;
-		public int level;
-		public int xp;
-		public float karma;
+		public string Name;
+		public int Level;
+		public int XP;
+		public float Karma;
 
 		public PlayerInfo(string name)
 		{
-			this.name = name;
-			level = 1;
-			xp = PlayerXP.instance.Config.XpInitial;
-			karma = PlayerXP.instance.Config.KarmaInitial;
+			this.Name = name;
+			Level = PlayerXP.instance.Config.LevelInitial;
+			XP = PlayerXP.instance.Config.XpInitial;
+			Karma = PlayerXP.instance.Config.KarmaInitial;
 		}
 	}
 }

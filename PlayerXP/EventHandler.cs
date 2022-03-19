@@ -1,7 +1,13 @@
 using Exiled.API.Features;
+using Hints;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using CommandSystem;
+using Exiled.API.Features.Items;
+using RemoteAdmin;
 using Exiled.Events.EventArgs;
 
 namespace PlayerXP
@@ -31,7 +37,7 @@ namespace PlayerXP
 			{
 				if (pInfoDict.ContainsKey(player.UserId))
 				{
-					if (pInfoDict[player.UserId].karma < PlayerXP.instance.Config.KarmaLabeledBadActor)
+					if (pInfoDict[player.UserId].Karma < PlayerXP.instance.Config.KarmaLabeledBadActor)
 					{
 						Player swap = FindEligibleClassd();
 						swap.SetRole(player.Role);
@@ -70,10 +76,12 @@ namespace PlayerXP
 			if (ev.Killer.Team == ev.Target.Team && ev.Killer.UserId != ev.Target.UserId && PlayerXP.instance.Config.TeamKillPunishment > 0)
 			{
 				int xp = CalcXP(ev.Killer, PlayerXP.instance.Config.TeamKillPunishment);
-				if (PlayerXP.instance.Config.IsRoleplay == false) RemoveXP(ev.Killer.UserId, xp, PlayerXP.instance.Config.PlayerTeamkillMessage.Replace("{xp}", xp.ToString()).Replace("{target}", ev.Target.Nickname));
+				RemoveXP(ev.Killer.UserId, xp, PlayerXP.instance.Config.PlayerTeamkillMessage.Replace("{xp}", xp.ToString()).Replace("{target}", ev.Target.Nickname));
 				// Player teamkilled
 			}
 
+			
+			
 			if (ev.Killer.Team == Team.CDP)
 			{
 				int gainedXP = 0;
@@ -180,7 +188,7 @@ namespace PlayerXP
 						if (player.Role == RoleType.Tutorial)
 						{
 							int xp = CalcXP(player, PlayerXP.instance.Config.TutorialScpKillsPlayer);
-							if (PlayerXP.instance.Config.IsSH == true) AddXP(player.UserId, xp, PlayerXP.instance.Config.TutorialScpKillsPlayerMessage.Replace("{xp}", xp.ToString()).Replace("{target}", ev.Target.Nickname));
+							if (PlayerXP.instance.Config.IsSH) AddXP(player.UserId, xp, PlayerXP.instance.Config.TutorialScpKillsPlayerMessage.Replace("{xp}", xp.ToString()).Replace("{target}", ev.Target.Nickname));
 						}
 					}
 				}
@@ -291,7 +299,7 @@ namespace PlayerXP
 
 		public void OnRemovingHandcuff(RemovingHandcuffsEventArgs ev)
 		{
-			if (pCuffedDict[ev.Cuffer] != null) pCuffedDict[ev.Cuffer] = null;
+			if (pCuffedDict.ContainsKey(ev.Cuffer) && pCuffedDict[ev.Cuffer] != null) pCuffedDict[ev.Cuffer] = null;
 		}
 	}
 }
