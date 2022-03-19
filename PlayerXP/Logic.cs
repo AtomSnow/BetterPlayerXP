@@ -35,7 +35,7 @@ namespace PlayerXP
 				
 				info.XP += (int)(xp * PlayerXP.instance.Config.XpScale * (PlayerXP.instance.Config.KarmaEnabled ? info.Karma : PlayerXP.instance.Config.KarmaInitial)); // Adjusts the player's karma.
 				
-				if (msg != null) SendHint(player, $"<color=yellow>{msg}</color>"); // If the message is not null, then it will send it to the player.
+				if (msg != null) SendHint(player, $"<color={PlayerXP.instance.Config.RemoveXPHintColor}>{msg}</color>"); // If the message is not null, then it will send it to the player.
 
 				int calc = (info.Level - 1) * PlayerXP.instance.Config.XpIncrement + baseXP; // Calculates if the player can level up
 				
@@ -44,7 +44,7 @@ namespace PlayerXP
 					// Level up logic
 					info.XP -= calc;
 					info.Level++;
-					SendHint(player, $"<color=yellow><b>You've leveled up to level {info.Level}! You need {calc + PlayerXP.instance.Config.XpIncrement - info.XP} xp for your next level.</b></color>", 4f);
+					SendHint(player, $"<color={PlayerXP.instance.Config.LevelUpHintColor}><b>You've leveled up to level {info.Level}! You need {calc + PlayerXP.instance.Config.XpIncrement - info.XP} xp for your next level.</b></color>", 4f);
 				}
 				
 				// Assigns the dict to a new one.
@@ -60,7 +60,7 @@ namespace PlayerXP
 				Player player = Player.Get(userid);
 				
 				info.XP -= xp;
-				if (msg != null) SendHint(player, $"<color=yellow>{msg}</color>", 2f);
+				if (msg != null) SendHint(player, $"<color={PlayerXP.instance.Config.RemoveXPHintColor}>{msg}</color>", 2f);
 				
 				if (info.XP <= 0)
 				{
@@ -166,7 +166,7 @@ namespace PlayerXP
 				}
 				string userid = file.Name.Replace(".json", "");
 				
-				if (PlayerXP.instance.Config.IsDebug) Log.Info($"Loading cached stats for {info.Name} ({userid})...");
+				Log.Debug($"Loading cached stats for {info.Name} ({userid})...", PlayerXP.instance.Config.IsDebug);
 				pInfoDict.Add(userid, info);
 			}
 			pInfoDict = pInfoDict.OrderByDescending(x => x.Value.Level).ThenByDescending(x => x.Value.XP).ToDictionary(x => x.Key, x => x.Value);
@@ -174,16 +174,10 @@ namespace PlayerXP
 
 		//private bool IsUnarmed(Player player)
 		//{
-		//	foreach (var fuck in Item.IsWeapon)
-		//	{
-		//		if (fuck.id == ItemType.GunCrossvec || Item .IsWeapon.id == ItemType.GunCOM15 ||
-		//			fuck.id == ItemType.GunE11SR || fuck.id == ItemType.GunLogicer ||
-		//			fuck.id == ItemType.GunRevolver || fuck.id == ItemType.GunAK ||
-		//			fuck.id == ItemType.GunShotgun || fuck.id == ItemType.MicroHID ||
-		//			fuck.id == ItemType.GrenadeHE || fuck.id == ItemType.GrenadeFlash ||
-		//			fuck.id == ItemType.SCP018) return false;
-		//	}
-		//	return true;
+		//	if (!ev.Player.Items.Any(i => i.id.IsWeapon() || i.id.IsThrowable()))
+		//		return true;
+		//	else
+		//		return false;
 		//}
 
 		private Player FindEligibleClassd()

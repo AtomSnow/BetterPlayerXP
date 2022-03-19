@@ -28,6 +28,12 @@ namespace PlayerXP
 		[Description("How much more XP it should take to get to the next level than the previous one.")]
 		public int XpIncrement { get; set; } = 250;
 
+		[Description("Hint Color when XP gets added.")]
+		public string AddXPHintColor { get; set; } = "green";
+
+		[Description("Hint Color when XP gets removed.")]
+		public string RemoveXPHintColor { get; set; } = "red";
+
 		// --- KARMA ---
 
 		[Description("If karma is enabled.")]
