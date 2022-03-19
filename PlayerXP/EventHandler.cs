@@ -291,7 +291,7 @@ namespace PlayerXP
 
 		public void OnRemovingHandcuff(RemovingHandcuffsEventArgs ev)
 		{
-			if (pCuffedDict.ContainsKey(ev.Cuffer) && pCuffedDict[ev.Cuffer] != null) pCuffedDict[ev.Cuffer] = null;
+			if (pCuffedDict[ev.Cuffer] != null) pCuffedDict[ev.Cuffer] = null;
 		}
 	}
 }

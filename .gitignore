@@ -24,3 +24,5 @@ PlayerXP/obj/Release/BetterPlayerXP.csproj.FileListAbsolute.txt
 *.pdb
 *.dll
 *.CopyComplete
+PlayerXP/obj/Debug/.NETFramework,Version=v4.7.2.AssemblyAttributes.cs
+PlayerXP/obj/Debug/BetterPlayerXP.csproj.AssemblyReference.cache

@@ -92,9 +92,7 @@
     <Compile Include="EventHandler.cs" />
     <Compile Include="Logic.cs" />
     <Compile Include="PlayerInfo.cs" />
-    <Compile Include="Infotag/Tag.cs" />
     <Compile Include="PlayerXP.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
