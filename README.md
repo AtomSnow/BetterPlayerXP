@@ -2,20 +2,8 @@
 
 A plugin that adds a leveling system to your server. Users start at level 1, and gain experience through doing tasks such as escaping as a classd or scientist, winning the round, killing an SCP, etc.
 
-# Message for people that use this plugin.
-
-I have no time or motivation to maintain this plugin, too many problems exist in this plugin that my brain can't comprehend and read code correctly, since EXILED 3 released this kept happening, though if you want to fix them, make a pull request and I'll push it to main branch.
-
-# READ ME!!!
-
-There are a few issues with the plugin but it is still usable, One issue is with commands not working! If you want to fix it please go ahead and do so. -Denty (I just rebuilt this since Atom was having an issue with their compiler)
-
-# I know this code hurts
-Previous owner's fault
-
-# Fork info
-
-This fork is meant to maintain the plugin by the community.
+# IMPORTANT!!!!11!!!!!
+EVERYTHING IS NOT WORKING YET!
 
 # Installation
 
