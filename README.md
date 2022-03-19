@@ -7,7 +7,8 @@ EVERYTHING IS NOT WORKING YET!
 
 # Installation
 
-**[EXILED](https://github.com/galaxy119/EXILED) 4.1.2+ must be installed**
+**[EXILED](https://github.com/galaxy119/EXILED) 4.1.2+ must be installed!**
+**[NewtonsoftJSON](https://github.com/JamesNK/Newtonsoft.Json/releases) 10.0.1+ must be installed!**
 
 Place the `BetterPlayerXP.dll` file in your `~/.config/Exiled/Plugins` folder.
 
@@ -18,14 +19,14 @@ Place the `BetterPlayerXP.dll` file in your `~/.config/Exiled/Plugins` folder.
 * Players will be given small configurable messages on their screen to notify them when they gain xp, as well as level up.
 * Fully configurable karma system.
   * Players will gain karma for doing good deeds
-  * Players will lost karma for doing bad deeds such as killing unarmed Class-D or Scientists.
-  * Karma is an xp multiplier, all players start with a karma of 1.00
+  * ~~Players will lost karma for doing bad deeds such as killing unarmed Class-D or Scientists.~~
+  * Karma is an xp multiplier, all players start with a karma of 1.00.
   * Players with karma below a certain amount can be denied the ability to play SCP.
   * This system can be toggled on and off.
-* Commands that can be run through RA console **or** client console by using the prefix `.` to check the level, xp, and server ranking of a user, as well as the server leaderboard.
-* Commands to calculate a server leaderboard based off a configurable size and check a player's level.
+* ~~Commands that can be run through RA console **or** client console by using the prefix `.` to check the level, xp, and server ranking of a user, as well as the server leaderboard.~~
+* ~~Commands to calculate a server leaderboard based off a configurable size and check a player's level.~~
 * Levels get increasingly harder to achieve, the amount in which is takes to achieve the next level can be modified.
-* When a player is killed, the victim gets a message displaying the killers level.
+* When a player is killed, the victim gets a message displaying the killer's level.
 * All data transfer between servers.
 
 # API

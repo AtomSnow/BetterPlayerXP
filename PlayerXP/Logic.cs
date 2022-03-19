@@ -15,7 +15,7 @@ namespace PlayerXP
 
 		private void SendHint(Player player, string msg, float time = 3f)
 		{
-			player.HintDisplay.Show(new TextHint(msg, new HintParameter[] { new StringHintParameter("") }, HintEffectPresets.FadeInAndOut(0.25f), time)); // Use basegame hint instead of ShowHint, no idea why.
+			player.HintDisplay.Show(new TextHint(msg, new HintParameter[] { new StringHintParameter("") }, HintEffectPresets.FadeInAndOut(0.25f), time)); // Hint.
 		}
 
 		/// <summary>
@@ -24,12 +24,12 @@ namespace PlayerXP
 		/// <param name="userid">The <see cref="Player"/>'s UserID.</param>
 		/// <param name="xp">How much XP to add.</param>
 		/// <param name="msg">The message shown to the player</param>
-		/// <param name="karmaOverride">If the karma to add will be able to overflow maybe? Idfk</param>
+		/// <param name="karmaOverride">If the karma to add will be able to overflow maybe?</param>
 		internal void AddXP(string userid, int xp, string msg = null, float karmaOverride = -1f)
 		{
 			if (pInfoDict.TryGetValue(userid, out var info))
 			{
-				Player player = Player.Get(userid); // Gets the player
+				Player player = Player.Get(userid); // Gets the player.
 
 				AdjustKarma(player, karmaOverride == -1f ? PlayerXP.instance.Config.KarmaGainedOnGoodDeed : karmaOverride); // Adjusts the player's karma, for a good deed done.
 				
@@ -37,11 +37,11 @@ namespace PlayerXP
 				
 				if (msg != null) SendHint(player, $"<color={PlayerXP.instance.Config.RemoveXPHintColor}>{msg}</color>"); // If the message is not null, then it will send it to the player.
 
-				int calc = (info.Level - 1) * PlayerXP.instance.Config.XpIncrement + baseXP; // Calculates if the player can level up
+				int calc = (info.Level - 1) * PlayerXP.instance.Config.XpIncrement + baseXP; // Calculates if the player can level up.
 				
 				if (info.XP >= calc)
 				{
-					// Level up logic
+					// Level up logic.
 					info.XP -= calc;
 					info.Level++;
 					SendHint(player, $"<color={PlayerXP.instance.Config.LevelUpHintColor}><b>You've leveled up to level {info.Level}! You need {calc + PlayerXP.instance.Config.XpIncrement - info.XP} xp for your next level.</b></color>", 4f);
@@ -136,10 +136,10 @@ namespace PlayerXP
 
 		private void SaveStats()
 		{
-			if (PlayerXP.instance.Config.IsDebug) Log.Info($"Saving stats for a total of {pInfoDict.Count} players.");
+			Log.Debug($"Saving stats for a total of {pInfoDict.Count} players.", PlayerXP.instance.Config.IsDebug);
 			foreach (KeyValuePair<string, PlayerInfo> info in pInfoDict)
 			{
-				if (PlayerXP.instance.Config.IsDebug) Log.Info($"Saving stats for {info.Key}...");
+				Log.Debug($"Saving stats for {info.Key}...", PlayerXP.instance.Config.IsDebug);
 				File.WriteAllText(Path.Combine(PlayerXP.XPPath, $"{info.Key}.json"), JsonConvert.SerializeObject(info.Value, Formatting.Indented));
 			}
 		}

@@ -27,9 +27,9 @@ namespace PlayerXP
 		public override void OnEnabled()
 		{
 			base.OnEnabled();
-			Log.Info("[PR1] This plugin is still not fully working yet, if you want to help me, make pull request on my Github!");
+			Log.Info("[PR2] This plugin is still not fully working yet, if you want to help me, make pull request on my Github!");
 
-			if (!Directory.Exists(XPPathOld)) Log.Info("XP Folder name has been changed to BetterPlayerXP, please migrate to new folder.");
+			if (Directory.Exists(XPPathOld)) Log.Info("XP Folder name has been changed to BetterPlayerXP, please migrate to new folder.");
 
 			if (!Config.IsEnabled) return;
 
