@@ -34,6 +34,9 @@ namespace PlayerXP
 		[Description("Hint Color when XP gets removed.")]
 		public string RemoveXPHintColor { get; set; } = "red";
 
+		[Description("Hint Color when player levels up.")]
+		public string LevelUpHintColor { get; set; } = "yellow";
+
 		// --- KARMA ---
 
 		[Description("If karma is enabled.")]
