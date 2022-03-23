@@ -22,6 +22,7 @@ namespace PlayerXP
 		public void OnVerified(VerifiedEventArgs ev)
 		{
 			if (!File.Exists(Path.Combine(PlayerXP.XPPath, $"{ev.Player.UserId}.json"))) pInfoDict.Add(ev.Player.UserId, new PlayerInfo(ev.Player.Nickname));
+			else if (ev.Player.UserId == null) Log.Debug($"Verified Player returned as null.", PlayerXP.instance.Config.IsDebug);
 		}
 
 		public void OnWaitingForPlayers()
@@ -77,7 +78,7 @@ namespace PlayerXP
 			{
 				int xp = CalcXP(ev.Killer, PlayerXP.instance.Config.TeamKillPunishment);
 				RemoveXP(ev.Killer.UserId, xp, PlayerXP.instance.Config.PlayerTeamkillMessage.Replace("{xp}", xp.ToString()).Replace("{target}", ev.Target.Nickname));
-				// Player teamkilled
+				// Player teamkilled.
 			}
 
 			
@@ -98,7 +99,7 @@ namespace PlayerXP
 				{
 					int xp = CalcXP(ev.Killer, gainedXP);
 					AddXP(ev.Killer.UserId, xp, PlayerXP.instance.Config.PlayerKillMessage.Replace("{xp}", xp.ToString()).Replace("{target}", ev.Target.Nickname));
-					// , isUnarmed ? -PlayerXP.instance.Config.KarmaLostOnDefenselessKill : -1f)
+					// , isUnarmed ? -PlayerXP.instance.Config.KarmaLostOnDefenselessKill : -1f
 				}
 			}
 			else if (ev.Killer.Team == Team.RSC)
@@ -180,6 +181,8 @@ namespace PlayerXP
 						AddXP(ev.Killer.UserId, xp, PlayerXP.instance.Config.PlayerKillMessage.Replace("{xp}", xp.ToString()).Replace("{target}", ev.Target.Nickname));
 					}
 				}
+
+			else if (ev.Killer == null) Log.Debug($"Killer Player returned as null.", PlayerXP.instance.Config.IsDebug);
 
 				if (PlayerXP.instance.Config.TutorialScpKillsPlayer > 0 && ev.Target.Team != Team.TUT && ev.Target.UserId != ev.Killer.UserId)
 				{
