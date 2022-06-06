@@ -18,16 +18,16 @@ namespace PlayerXP
 
 		public override string Author { get; } = "Cyanox, AtomSnow, DentyTxR (Partial update)";
 
-        public override Version RequiredExiledVersion { get; } = new Version(4, 0, 0);
+        public override Version RequiredExiledVersion { get; } = new Version(5, 0, 0);
 
         public override string Prefix { get; } = "BetterPlayerXP";
 
-        public override Version Version { get; } = new Version(0, 4, 0);
+        public override Version Version { get; } = new Version(0, 4, 1);
 
 		public override void OnEnabled()
 		{
 			base.OnEnabled();
-			Log.Info("[PR2] This plugin is still not fully working yet, if you want to help me, make pull request on my Github!");
+			Log.Info("[PR3] This plugin is still not fully working yet, if you want to help me, make pull request on my Github!");
 
 			if (Directory.Exists(XPPathOld)) Log.Info("XP Folder name has been changed to BetterPlayerXP, please migrate to new folder.");
 
